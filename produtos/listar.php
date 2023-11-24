@@ -24,7 +24,7 @@
 <body>
 
     <div class="container">
-        <h1>Produtos | SELECT <a href="../index.html"></a></h1>
+        <h1>Produtos | <span>SELECT</span> <a href="../index.html"></a></h1>
 
         <hr>
 
