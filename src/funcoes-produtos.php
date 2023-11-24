@@ -33,7 +33,7 @@
     
     // Programar a função inserirProdutos neste ponto 
     function inserirProdutos(PDO $conexao, string $nome, float $preco, int $quantidade, string $descricao, int $fabricanteId):void{ // Void indica sem retorno
-        $sql = "INSERT INTO produtos(nome, descricao, preco, quantidade, fabricantes_id ) VALUES(:nome, :descricao, :preco, :quantidade, :fabricantes_id )";
+        $sql = "INSERT INTO produtos(nome, descricao, preco, quantidade, fabricante_id ) VALUES(:nome, :descricao, :preco, :quantidade, :fabricante_id )";
 
         try {
             // Preparação do comando
@@ -43,7 +43,7 @@
             $consulta->bindParam(':preco', $preco, PDO::PARAM_STR);
             $consulta->bindParam(':quantidade', $quantidade, PDO::PARAM_INT);
             $consulta->bindParam(':descricao', $descricao, PDO::PARAM_STR);
-            $consulta->bindParam(':fabricante_id', $fabricanteid, PDO::PARAM_INT);
+            $consulta->bindParam(':fabricante_id', $fabricanteId, PDO::PARAM_INT);
 
             // Execução do comando
             $consulta->execute();
@@ -54,7 +54,7 @@
     
     // Programar a função lerUmProduto neste ponto 
     function lerUmProduto(PDO $conexao, int $id):array {
-        $sql = "SELECT id, nome, descricao, preco, quantidade, fabricantes_id  FROM produtos WHERE id = :id";
+        $sql = "SELECT id, nome, descricao, preco, quantidade, fabricante_id  FROM produtos WHERE id = :id";
         try {
             // Preparação do comando
             $consulta = $conexao->prepare($sql);

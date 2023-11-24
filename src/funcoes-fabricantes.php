@@ -31,7 +31,7 @@
         // OBS Não é necessário criar para ID que é automatico
 
         // :qualquer_coisa -> isso é um named parameter
-        $sql = "INSERT INTO fabricanter(nome) VALUES(:nome)";
+        $sql = "INSERT INTO fabricantes(nome) VALUES(:nome)";
         try {
             $consulta = $conexao->prepare($sql);
 
