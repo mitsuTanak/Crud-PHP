@@ -1,0 +1,31 @@
+.body {
+    background-color: lightgrey;
+}
+
+span{
+    color: blueviolet;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+}
+
+li {
+    list-style: none;
+    padding: 10px;
+}
+
+.link {
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+
+.link:hover {
+    color: whitesmoke ;
+}
+
+.paragrafo{
+    margin-top: 15px;
+}

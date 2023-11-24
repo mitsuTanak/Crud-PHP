@@ -67,6 +67,7 @@
                 </article>
             <?php } ?>
         </div>
+        <p><a href="../index.html"><button type="submit" class="btn btn-warning">Home</button></a></p>
     </div>
 
     <!-- Chamado arquivo JS paraperguntar antes de excluir -->
