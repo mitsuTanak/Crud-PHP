@@ -6,15 +6,15 @@
     // Programar a função lerFabricantes neste ponto
     function lerProdutos(PDO $conexao):array{
         // String com comando SQL para trazer apenas o nº do id (ANTIGO)
-        // $sql = "SELECT id, nome, descricao, preco, quantidade, fabrincantes_id FROM produtos ORDER BY nome";
+        // $sql = "SELECT id, nome, descricao, preco, quantidade, fabricantes_id FROM produtos ORDER BY nome";
         $sql = "SELECT produtos.id,
         produtos.nome AS produto,
         produtos.descricao,
         produtos.preco,
         produtos.quantidade,
-        fabrincantes.nome AS fabricante
-        FROM produtos INNER JOIN fabrincantes 
-        ON produtos.fabrincantes_id = fabricantes.id
+        fabricantes.nome AS fabricante
+        FROM produtos INNER JOIN fabricantes 
+        ON produtos.fabricante_id = fabricantes.id
         ORDER BY produto";
         try {
             // Preapração do comando
@@ -33,7 +33,7 @@
     
     // Programar a função inserirProdutos neste ponto 
     function inserirProdutos(PDO $conexao, string $nome, float $preco, int $quantidade, string $descricao, int $fabricanteId):void{ // Void indica sem retorno
-        $sql = "INSERT INTO produtos(nome, descricao, preco, quantidade, fabrincantes_id ) VALUES(:nome, :descricao, :preco, :quantidade, :fabrincantes_id )";
+        $sql = "INSERT INTO produtos(nome, descricao, preco, quantidade, fabricantes_id ) VALUES(:nome, :descricao, :preco, :quantidade, :fabricantes_id )";
 
         try {
             // Preparação do comando
@@ -54,7 +54,7 @@
     
     // Programar a função lerUmProduto neste ponto 
     function lerUmProduto(PDO $conexao, int $id):array {
-        $sql = "SELECT id, nome, descricao, preco, quantidade, fabrincantes_id  FROM produtos WHERE id = :id";
+        $sql = "SELECT id, nome, descricao, preco, quantidade, fabricantes_id  FROM produtos WHERE id = :id";
         try {
             // Preparação do comando
             $consulta = $conexao->prepare($sql);
@@ -75,7 +75,7 @@
     
     // Programar a função atualizarProduto neste ponto
     function atualizarProdutos(PDO $conexao, string $nome, float $preco, int $quantidade, string $descricao, int $fabricanteId) {
-        $sql = "UPDATE produtos SET nome = :nome, preco = :preco, quantidade = :quantidade, descricao = :descricao, fabrincantes_id = :fabricante_id WHERE id = :id";
+        $sql = "UPDATE produtos SET nome = :nome, preco = :preco, quantidade = :quantidade, descricao = :descricao, fabricantes_id = :fabricante_id WHERE id = :id";
         try {
             $consulta = $conexao->prepare($sql);
 

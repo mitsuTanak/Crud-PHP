@@ -5,7 +5,7 @@
     // Programar a função lerFabricantes neste ponto
     function lerFabricantes(PDO $conexao):array{
         // String com comando SQL
-        $sql = "SELECT id, nome FROM fabrincantes";
+        $sql = "SELECT id, nome FROM fabricantes";
         try {
             // Preapração do comando
             $consulta = $conexao->prepare($sql);
